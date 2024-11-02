@@ -22,7 +22,7 @@ app.use(express.static("Public"));
 // List of allowed origins, including local development and production
 const allowedOrigins = [
   "http://localhost:5173", // Local development
-  "https://job-portal-frontend-topaz.vercel.app", // Production frontend
+  "https://job-two-delta.vercel.app/", // Production frontend
 ];
 
 const corsOptions = {
