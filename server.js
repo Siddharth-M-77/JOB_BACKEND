@@ -7,7 +7,8 @@ import userRouter from "./routes/user.route.js";
 import jobRouter from "./routes/job.route.js";
 import companyRouter from "./routes/company.routes.js";
 import applicationRouter from "./routes/application.route.js";
-dotenv.config({}); // Load environment variables
+
+dotenv.config(); // Load environment variables
 const app = express();
 
 // Middleware to parse JSON request bodies
@@ -22,7 +23,7 @@ app.use(express.static("Public"));
 // List of allowed origins, including local development and production
 const allowedOrigins = [
   "http://localhost:5173", // Local development
-  "https://job-two-delta.vercel.app/", // Production frontend
+  "https://job-two-delta.vercel.app", // Production frontend without trailing slash
 ];
 
 const corsOptions = {
@@ -35,8 +36,6 @@ const corsOptions = {
   },
   credentials: true, // Allow credentials (cookies, tokens)
 };
-
-app.use(cors(corsOptions));
 
 app.use(cors(corsOptions));
 
